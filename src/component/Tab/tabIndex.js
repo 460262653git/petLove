@@ -8,15 +8,15 @@ export default class Tab extends Component{
         return (
             <nav className='mTabs'>
                 <NavLink exact to='/'>
-                    <i></i>
+                    <i className='icon icon-shouye'></i>
                     <span>首页</span>
                 </NavLink>
                 <NavLink to='/search'>
-                    <i></i>
+                    <i className='icon icon-sousuo'></i>
                     <span>搜索</span>
                 </NavLink>
                 <NavLink exact to='/profile'>
-                    <i></i>
+                    <i className='icon icon-tag9'></i>
                     <span>个人中心</span>
                 </NavLink>
             </nav>

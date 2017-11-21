@@ -1,6 +1,6 @@
 module.exports = {
     hasMore:true,
-    classList:[
+    kindList:[
         {
             url:'http://cdn3.viposs.com/default/147/21133939572.jpg?imageView2/1/w/270/h/270/q/92',
             id:1,

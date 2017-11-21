@@ -3,7 +3,7 @@ let bodyParser = require('body-parser');
 let session = require('express-session');
 
 let app = express();
-app.use(session.json());
+app.use(bodyParser.json());
 app.use(session({
     resave:true,
     saveUninitialized:true,
@@ -12,6 +12,7 @@ app.use(session({
 
 let sliders = require('./mock/slider');
 let kinds = require('./mock/kind');
+console.log(kinds)
 
 app.use(function (req,res,next) {
     res.header('Access-Control-Allow-Origin','http://localhost:8080');
@@ -29,16 +30,22 @@ app.get('/sliders',function (req,res) {
    res.json(sliders)
 });
 // 获取部分图片
-app.get('/class',function (req,res) {
+app.get('/kinds',function (req,res) {
     let cloneKinds = JSON.parse(JSON.stringify(kinds));
+    console.log(cloneKinds);
+
     let {offset=0,limit=8} = req.query;
-    for(let i=0;i<cloneKinds.list.length;i++){
-        let kind = cloneKinds.list[i];
+    for(let i=0;i<cloneKinds.kindList.length;i++){
+        let kind = cloneKinds.kindList[i];
         kind.title = `${+offset+i+1}-${kind.title}`
     }
-    setTimeout(()=>{
+    if(parseFloat(offset)+parseFloat(limit) >= 35){
+        cloneKinds.hasMore = false;
+    }
+    cloneKinds.kindList=cloneKinds.kindList.slice(parseFloat(offset),parseFloat(offset)+parseFloat(limit))
+    setTimeout(function () {
         res.json(cloneKinds)
-    },1000)
+    },1300)
 });
 
 

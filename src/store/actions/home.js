@@ -13,9 +13,34 @@ export default {
             })
         }
     },
+    //开始获取home页面的开始
     getKinds(){
         return(dispatch,getState)=>{
-
+            let {loading,hasMore,offset,limit} = getState().home.kinds;
+            if(!loading&&hasMore){
+                dispatch({
+                    type:types.FETCH_KINDS
+                });
+                dispatch({
+                    type:types.FETCH_KINDS_FINISH,
+                    payload:fetchKinds(offset,limit)
+                })
+            }
+        }
+    },
+    // 刷新页面
+    getRefresh(){
+        return (dispatch,getState)=>{
+            let {loading,hasMore,offset,limit} = getState().home.kinds;
+            if(!loading){
+                dispatch({
+                    type:types.FETCH_KINDS
+                });
+                dispatch({
+                    type:types.FETCH_KINDS_FINISH,
+                    payload:fetchKinds(0,limit)
+                })
+            }
         }
     }
 }

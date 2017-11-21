@@ -7,5 +7,5 @@ export function fetchSliders() {
 
 // 获取所有的图片
 export function fetchKinds(offset,limit) {
-    return get(`/kind?offset=${offset}&limit=${limit}`)
+    return get(`/kinds?offset=${offset}&limit=${limit}`)
 }

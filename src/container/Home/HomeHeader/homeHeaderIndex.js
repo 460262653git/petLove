@@ -11,6 +11,15 @@ export default class HomeHeader extends Component{
             <div className='mHome-header'>
                 <div className='mHome-logo'>
                     <img src={logo}/>
+                    <div className='mHome-list'>
+                        <Link to='/login'>
+                            登录
+                        </Link>
+                        <span>/</span>
+                        <Link to='/signup'>
+                            注册
+                        </Link>
+                    </div>
                 </div>
                 <ul className='mHome-menu'>
                     <li>首页</li>

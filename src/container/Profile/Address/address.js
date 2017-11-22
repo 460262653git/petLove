@@ -5,13 +5,16 @@ import Dialog from '../../../component/Dialog/dialog'
 export default class Home extends Component{
     constructor(props){
         super(props);
-        this.state={};
+        this.state={modalIsOpen:false};
     }
     handleClick=()=>{
         this.props.history.goBack();
     };
     addAddress=()=>{
-
+        console.log('aaa');
+        this.setState({
+            modalIsOpen:true
+        })
     };
     render(){
         return (
@@ -45,10 +48,11 @@ export default class Home extends Component{
                             +
                         </button>
                         新增地址
-                        <Dialog modalIsOpen={true}/>
+                        <Dialog isShow={this.state.modalIsOpen} config={{content:'abc'}}/>
                     </div>
                 </div>
             </div>
         )
     }
 }
+// modalIsOpen={true}

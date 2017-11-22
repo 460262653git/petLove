@@ -1,3 +1,4 @@
+/*
 import React,{Component} from 'react';
 import Modal from 'react-modal'
 
@@ -6,7 +7,6 @@ import './dialog.less'
 export default class Dialog extends Component{
     constructor() {
         super();
-
         this.state = {
             modalIsOpen: false
         };
@@ -18,7 +18,6 @@ export default class Dialog extends Component{
         this.setState({modalIsOpen: true});
     }
     afterOpenModal() {
-        // references are now sync'd and can be accessed.
         this.subtitle.style.color = '#f00';
     }
     closeModal() {
@@ -39,7 +38,7 @@ export default class Dialog extends Component{
         return (
             <div>
                 <Modal
-                    isOpen={true}
+                    isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.props.afterOpenModal}
                     onRequestClose={this.props.closeModal}
                     style={this.props.customStyles||customStyles}
@@ -57,6 +56,21 @@ export default class Dialog extends Component{
                         <button>the modal</button>
                     </form>
                 </Modal>
+            </div>
+        )
+    }
+}
+*/
+import React,{Component} from 'react';
+import './dialog.less'
+export default class Dialog extends Component{
+    render(){
+        console.log(this.props.isShow)
+        return (
+            <div>
+                {
+                    this.props.isShow?<div className="dialog">{this.props.config.content}</div>:null
+                }
             </div>
         )
     }

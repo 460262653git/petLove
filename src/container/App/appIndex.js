@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import ReactDOM from 'react-dom';
 import './appLess.less'
 
 import {
@@ -11,6 +10,10 @@ import {
 import Home from '../../container/Home/homeIndex';
 import Profile from '../../container/Profile/profileIndex';
 import Search from '../../container/Search/searchIndex';
+import Login from '../../container/Login/login'
+import Signup from '../../container/Signup/signup'
+
+import Detail from '../../component/Detail/detail'
 import Favourable from '../../container/Profile/Favourable/index'
 import Address from '../../container/Profile/Address/address'
 import Collect from '../../container/Profile/Collect/collect'
@@ -27,11 +30,14 @@ export default class App extends Component{
                     <Route path='/' exact component={Home}/>
                     <Route path='/profile' component={Profile}/>
                     <Route path='/search' component={Search}/>
+                    <Route path='/login' component={Login}/>
+                    <Route path='/signup' component={Signup}/>
                     <Route path='/favourable' component={Favourable}/>
                     <Route path='/address' component={Address}/>
                     <Route path='/collect' component={Collect}/>
                     <Route path='/footprint' component={Footprint}/>
                     <Route path='/service' component={Service}/>
+                    <Route path='/detail' component={Detail}/>
                     <Tab/>
                 </div>
             </Router>

@@ -37,7 +37,7 @@ export default class Profile extends Component{
                     <div className='mProfile-address'>
                         <Link to='/address'>
                             <i className='iconfont icon-dizhi'></i>
-                            收货地址
+                            <span>收货地址</span>
                         </Link>
                     </div>
                 </div>

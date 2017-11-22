@@ -65,11 +65,28 @@ import React,{Component} from 'react';
 import './dialog.less'
 export default class Dialog extends Component{
     render(){
-        console.log(this.props.isShow)
+        console.log(this.props.isShow);
         return (
             <div>
                 {
-                    this.props.isShow?<div className="dialog">{this.props.config.content}</div>:null
+                    this.props.isShow?
+                        <div className="dialog-cover">
+
+                            <div className='dialog-form'>
+                                <span className='dialog-close'>×</span>
+                                <p className='dialog-text'>添加新收获地址</p>
+                                <div className='dialog-input'>
+                                    <input type="text" placeholder='姓名'/><i className='dialog-line'>|</i><input type="text"　placeholder='电话'/>
+                                </div>
+                                <div className='dialog-detailed'>
+                                    <input type="text" placeholder='请输入详细地址'/>
+                                </div>
+                                <div className='dialog-btn'>
+                                    <button　className='dialog-keep'>保存</button>
+                                </div>
+                            </div>
+                        </div>
+                        :null
                 }
             </div>
         )

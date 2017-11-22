@@ -11,7 +11,6 @@ export default class Home extends Component{
         this.props.history.goBack();
     };
     addAddress=()=>{
-        console.log('aaa');
         this.setState({
             modalIsOpen:true
         })
@@ -48,7 +47,7 @@ export default class Home extends Component{
                             +
                         </button>
                         新增地址
-                        <Dialog isShow={this.state.modalIsOpen} config={{content:'abc'}}/>
+                        <Dialog isShow={this.state.modalIsOpen} />
                     </div>
                 </div>
             </div>

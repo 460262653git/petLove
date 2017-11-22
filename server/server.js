@@ -1,6 +1,7 @@
 let express = require('express');
 let bodyParser = require('body-parser');
 let session = require('express-session');
+let url = require('url');
 
 let app = express();
 app.use(bodyParser.json());
@@ -34,17 +35,25 @@ app.get('/sliders',function (req,res) {
    res.json(sliders)
 });
 
-app.get('/detail/:id',(req,res,next)=>{
-let id=req.params.id;
-res.send(petLists)
-})
+app.get('/detail/:id',function (req,res) {
+    let sID = req.params.id;
+    let clonePet = petLists.petList||[];
+    console.log("111",clonePet);
+    let pet = clonePet.find((item,index)=>item.id == sID);
+    console.log(sID);
+    if(pet){
+        res.json(pet)
+    }
+});
 
+// app.get('/detail',function (req,res) {
+//     let {query} = url.parse(req.url,true);
+//     let
+// })
 
 // 获取部分图片
 app.get('/kinds',function (req,res) {
     let cloneKinds = JSON.parse(JSON.stringify(kinds));
-    console.log(cloneKinds);
-
     let {offset=0,limit=8} = req.query;
     for(let i=0;i<cloneKinds.kindList.length;i++){
         let kind = cloneKinds.kindList[i];

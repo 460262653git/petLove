@@ -1,10 +1,11 @@
 import React,{Component} from 'react';
 import Loading from '../../../component/Loading/loadIndex'
-
+import {Link} from 'react-router-dom'
 import './kindLess.less';
 
 export default class Kind extends Component{
     render(){
+        {/* <div onClick={()=>this.props.getDetails(item.id)} className='mKind' key={index}>*/}
         return (
             <div className='mClass'>
                 <div className='mClass-title'>
@@ -12,7 +13,8 @@ export default class Kind extends Component{
                 </div>
                 {
                     this.props.kinds.kindList.map((item,index)=>(
-                        <div className='mKind' key={index}>
+                        <Link to={'/detail/'+item.id}  key={index}>
+                            <div className='mKind'>
                             <img className='mKink-img' src={item.url}/>
                             <div className='mKind-info'>
                                 <p className='mKind-name'>{item.name}</p>
@@ -23,7 +25,7 @@ export default class Kind extends Component{
                                     <i>{item.referencePrice}</i>
                                 </p>
                             </div>
-                        </div>
+                        </div></Link>
                     ))
                 }
                 {

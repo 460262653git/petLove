@@ -37,7 +37,7 @@ export default class App extends Component{
                     <Route path='/collect' component={Collect}/>
                     <Route path='/footprint' component={Footprint}/>
                     <Route path='/service' component={Service}/>
-                    <Route path='/detail' component={Detail}/>
+                    <Route path='/detail/:id' component={Detail}/>
                     <Tab/>
                 </div>
             </Router>

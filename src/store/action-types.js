@@ -16,3 +16,6 @@ export const LOGIN = 'LOGIN';
 
 //验证用户是否登录
 export const VALIDATE = 'VALIDATE';
+
+//获取对应的详情页
+export const DETAIL_ID = 'DETAIL_ID';

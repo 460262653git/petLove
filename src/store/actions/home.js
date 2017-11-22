@@ -1,5 +1,5 @@
 import * as types from '../action-types';
-import {fetchSliders,fetchKinds} from '../../api/home';
+import {fetchSliders,fetchKinds,fetchPet} from '../../api/home';
 
 export default {
     // 获取轮播图
@@ -41,6 +41,17 @@ export default {
                     payload:fetchKinds(0,limit)
                 })
             }
+        }
+    },
+    getDetails(id){
+        return dispatch=>{
+            fetchPet(id).then(pet=>{
+                console.log(pet);
+                dispatch({
+                    type:types.DETAIL_ID,
+                    payload:pet
+                })
+            })
         }
     }
 }

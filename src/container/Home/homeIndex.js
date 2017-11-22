@@ -26,6 +26,7 @@ class Home extends Component{
                 <div ref='content' className='mContent'>
                     <Slider sliders={this.props.sliders}/>
                     <Kind
+                        getDetails={this.props.getDetails}
                         getKinds={this.props.getKinds}
                         kinds={this.props.kinds}
                     />

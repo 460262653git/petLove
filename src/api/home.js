@@ -9,3 +9,8 @@ export function fetchSliders() {
 export function fetchKinds(offset,limit) {
     return get(`/kinds?offset=${offset}&limit=${limit}`)
 }
+
+//
+export function fetchPet(id) {
+    return get(`/detail/${id}`)
+}

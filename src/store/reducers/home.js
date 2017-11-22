@@ -8,7 +8,8 @@ let initState = {
         kindList:[],
         offset:0,
         limit:8
-    }
+    },
+    pet:{}
 };
 
 export default function (state=initState,action) {
@@ -47,6 +48,11 @@ export default function (state=initState,action) {
                     kindList:action.payload.kindList,
                     offset:action.payload.kindList.length
                 }
+            };
+        case types.DETAIL_ID:
+            return {
+                ...state,
+                pet:action.payload
             };
         default :
             return state;

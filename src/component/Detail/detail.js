@@ -24,7 +24,6 @@ export default class Home extends Component {
     };
     componentDidMount() {
         fetchPet(this.props.match.params.id).then(res => {
-            console.log(res);
             this.setState({
                 pet: {...res}
             })

@@ -63,7 +63,14 @@ export default class Dialog extends Component{
 */
 import React,{Component} from 'react';
 import './dialog.less'
+import {connect} from 'react-redux'
+
+
 export default class Dialog extends Component{
+    constructor(props){
+        super(props);
+        this.state={addressList:[]}
+    }
     render(){
         console.log(this.props.isShow);
         return (
@@ -73,7 +80,8 @@ export default class Dialog extends Component{
                         <div className="dialog-cover">
 
                             <div className='dialog-form'>
-                                <span className='dialog-close'>×</span>
+                                <div className='dialog-close'><i className='wrong'>✖</i>
+                                </div>
                                 <p className='dialog-text'>添加新收获地址</p>
                                 <div className='dialog-input'>
                                     <input type="text" placeholder='姓名'/><i className='dialog-line'>|</i><input type="text"　placeholder='电话'/>

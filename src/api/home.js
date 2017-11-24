@@ -10,7 +10,8 @@ export function fetchKinds(offset,limit) {
     return get(`/kinds?offset=${offset}&limit=${limit}`)
 }
 
-//
+//获取详情页信息
 export function fetchPet(id) {
     return get(`/detail/${id}`)
 }
+

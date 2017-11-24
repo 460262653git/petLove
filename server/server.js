@@ -14,9 +14,12 @@ app.use(session({
 let sliders = require('./mock/slider');
 let kinds = require('./mock/kind');
 let petLists = require('./mock/pet');
+let address = require('./mock/address');
 
 // 用户的注册登录数据数组
 let users= [];
+// 用户输入的收货地址信息
+// let addressList = [];
 
 //跨域请求条件的设置
 app.use(function (req,res,next) {
@@ -34,7 +37,6 @@ app.use(function (req,res,next) {
 app.get('/sliders',function (req,res) {
    res.json(sliders)
 });
-
 app.get('/detail/:id',function (req,res) {
     let sID = req.params.id;
     let clonePet = petLists.petList||[];
@@ -45,11 +47,17 @@ app.get('/detail/:id',function (req,res) {
         res.json(pet)
     }
 });
-
 // app.get('/detail',function (req,res) {
 //     let {query} = url.parse(req.url,true);
 //     let
 // })
+// 获取所有的地址信息
+app.get('/address',function (req,res) {
+    let addressList = address.addressList;
+    res.json(addressList)
+});
+
+
 
 // 获取部分图片
 app.get('/kinds',function (req,res) {

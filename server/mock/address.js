@@ -1,0 +1,14 @@
+module.exports={
+    addressList:[
+        {
+            'name':'王丽',
+            'tel':'15133903456',
+            'detailedAddress':'北京市昌平区回龙观东大街'
+        },
+        {
+            'name':'王丽',
+            'tel':'15133903456',
+            'detailedAddress':'北京市昌平区回龙观东大街'
+        },
+    ]
+}
